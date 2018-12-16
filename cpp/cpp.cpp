@@ -1,28 +1,25 @@
 ﻿#include "pch.h"
 #include <iostream>
 using namespace std;
+#define DIGIT 3
 
 int main()
 {
-	// srand(time(NULL));
-
 	// 0~9 사이의 중복되지 않는 난수 3가지를 골라서 정답을 생성
-	int answer0, answer1, answer2;
+	int answers[DIGIT];
 
 	while (true)
 	{
-		answer0 = rand() % 10;
-		answer1 = rand() % 10;
-		answer2 = rand() % 10;
+		for (int i = 0; i < DIGIT; i++)
+			answers[i] = rand() % 10;
 
-		if (answer0 != answer1 && answer1 != answer2)
+		if (answers[0] != answers[1] && answers[1] != answers[2])
 			break;
 	}
 
 	cout << "[정답]";
-	cout << answer0 << ' ';
-	cout << answer1 << ' ';
-	cout << answer2 << ' ';
+	for (int i = 0; i < DIGIT; i++)
+		cout << answers[i] << ' ';
 	cout << endl;
 
 	int tryCount = 0;
