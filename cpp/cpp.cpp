@@ -1,5 +1,6 @@
 ﻿#include "pch.h"
 #include <iostream>
+#include "Result.h"
 using namespace std;
 #define DIGIT 3
 
@@ -42,7 +43,7 @@ int main()
 
 
 		// 정답과 추측을 비교하여 결과 판정
-		int strike = 0, ball = 0, out = 0;
+		Result result {0,0,0};
 
 		for (int i = 0; i < DIGIT; i++)
 		{
@@ -50,18 +51,18 @@ int main()
 			int k = (i + 2) % DIGIT;
 
 			if (guesses[i] == answers[i])
-				strike++;
+				result.strike++;
 			else if (guesses[i] == answers[j] || guesses[i] == answers[k])
-				ball++;
+				result.ball++;
 			else
-				out++;
+				result.out++;
 		}
 
 		// 결과를 화면에 출력
-		cout << "[결과] S:" << strike << " B: " << ball << " O:" << out << endl;
+		cout << "[결과] S:" << result.strike << " B:" << result.ball << " O:" << result.out << endl;
 
 		// 추측이 결과와 다르면 2번 단계로 돌아가서 반복
-		if (strike == 3)
+		if (result.strike == DIGIT)
 			break;
 	}
 
