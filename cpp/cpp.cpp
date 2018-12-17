@@ -30,46 +30,32 @@ int main()
 
 		// 사용자로부터 3개의 숫자(추측)를 입력 받음
 		cout << "추측을 입력하세요" << endl;
-		int guess0, guess1, guess2;
+		int guesses[DIGIT];
 
-		cin >> guess0;
-		cin >> guess1;
-		cin >> guess2;
+		for (int i = 0; i < DIGIT; i++)
+			cin >> guesses[i];
 
 		cout << "[추측]";
-		cout << guess0 << ' ';
-		cout << guess1 << ' ';
-		cout << guess2 << ' ';
+		for (int i = 0; i < DIGIT; i++)
+			cout << guesses[i] << ' ';
 		cout << endl;
 
 
 		// 정답과 추측을 비교하여 결과 판정
 		int strike = 0, ball = 0, out = 0;
 
-		// guess0 검사
-		if (guess0 == answer0)
-			strike++;
-		else if (guess0 == answer1 || guess0 == answer2)
-			ball++;
-		else
-			out++;
+		for (int i = 0; i < DIGIT; i++)
+		{
+			int j = (i + 1) % DIGIT;
+			int k = (i + 2) % DIGIT;
 
-		// guess1 검사
-		if (guess1 == answer1)
-			strike++;
-		else if (guess1 == answer2 || guess1 == answer0)
-			ball++;
-		else
-			out++;
-
-		// guess2 검사
-		if (guess2 == answer2)
-			strike++;
-		else if (guess2 == answer0 || guess2 == answer1)
-			ball++;
-		else
-			out++;
-
+			if (guesses[i] == answers[i])
+				strike++;
+			else if (guesses[i] == answers[j] || guesses[i] == answers[k])
+				ball++;
+			else
+				out++;
+		}
 
 		// 결과를 화면에 출력
 		cout << "[결과] S:" << strike << " B: " << ball << " O:" << out << endl;
