@@ -4,6 +4,20 @@
 using namespace std;
 #define DIGIT 3
 
+// void PrintNumbers(char* prefix, int numbers[])
+void PrintNumbers(const char* prefix, const int* numbers)
+{
+	cout << prefix;
+	for (int i = 0; i < DIGIT; i++)
+		cout << numbers[i] << ' ';
+	cout << endl;
+
+	int n = 0;
+	const int* p1 = &n; // p1++(O), (*p1)++(X)
+	int* const p2 = &n; // p2++(X), (*p2)++(O)
+	const int* const p3 = &n; // p3++(X), (*p3)++(X)
+}
+
 int main()
 {
 	// 0~9 사이의 중복되지 않는 난수 3가지를 골라서 정답을 생성
@@ -18,10 +32,7 @@ int main()
 			break;
 	}
 
-	cout << "[정답]";
-	for (int i = 0; i < DIGIT; i++)
-		cout << answers[i] << ' ';
-	cout << endl;
+	PrintNumbers("[정답]", answers);
 
 	int tryCount = 0;
 
@@ -36,10 +47,7 @@ int main()
 		for (int i = 0; i < DIGIT; i++)
 			cin >> guesses[i];
 
-		cout << "[추측]";
-		for (int i = 0; i < DIGIT; i++)
-			cout << guesses[i] << ' ';
-		cout << endl;
+		PrintNumbers("[추측]", guesses);
 
 
 		// 정답과 추측을 비교하여 결과 판정
