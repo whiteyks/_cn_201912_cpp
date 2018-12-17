@@ -27,7 +27,7 @@ bool HasDuplicateNumber(int* answers)
 {
 	for (int i = 0; i < DIGIT; i++)
 	{
-		if (CountInArray(answers, i) > 1)
+		if (CountInArray(answers, answers[i]) > 1)
 			return true;
 	}
 
