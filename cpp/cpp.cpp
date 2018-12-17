@@ -13,6 +13,27 @@ void PrintNumbers(const char* prefix, const int* numbers)
 	cout << endl;
 }
 
+int CountInArray(int* answers, int value)
+{
+	int count = 0;
+	for (int i = 0; i < DIGIT; i++)
+		if (answers[i] == value)
+			count++;
+
+	return count;
+}
+
+bool HasDuplicateNumber(int* answers)
+{
+	for (int i = 0; i < DIGIT; i++)
+	{
+		if (CountInArray(answers, i) > 1)
+			return true;
+	}
+
+	return false;
+}
+
 void GenerateAnswers(int answers[])
 {
 	while (true)
@@ -20,7 +41,7 @@ void GenerateAnswers(int answers[])
 		for (int i = 0; i < DIGIT; i++)
 			answers[i] = rand() % 10;
 
-		if (answers[0] != answers[1] && answers[1] != answers[2])
+		if (HasDuplicateNumber(answers) == false)
 			break;
 	}
 
