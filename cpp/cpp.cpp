@@ -11,18 +11,10 @@ void PrintNumbers(const char* prefix, const int* numbers)
 	for (int i = 0; i < DIGIT; i++)
 		cout << numbers[i] << ' ';
 	cout << endl;
-
-	int n = 0;
-	const int* p1 = &n; // p1++(O), (*p1)++(X)
-	int* const p2 = &n; // p2++(X), (*p2)++(O)
-	const int* const p3 = &n; // p3++(X), (*p3)++(X)
 }
 
-int main()
+void GenerateAnswers(int answers[])
 {
-	// 0~9 사이의 중복되지 않는 난수 3가지를 골라서 정답을 생성
-	int answers[DIGIT];
-
 	while (true)
 	{
 		for (int i = 0; i < DIGIT; i++)
@@ -33,6 +25,44 @@ int main()
 	}
 
 	PrintNumbers("[정답]", answers);
+}
+
+void InputGuesses(int guesses[])
+{
+	cout << "추측을 입력하세요" << endl;
+
+	for (int i = 0; i < DIGIT; i++)
+		cin >> guesses[i];
+
+	PrintNumbers("[추측]", guesses);
+}
+
+void CalculateResult(Result* result, int answers[], int guesses[])
+{
+	for (int i = 0; i < DIGIT; i++)
+	{
+		int j = (i + 1) % DIGIT;
+		int k = (i + 2) % DIGIT;
+
+		if (guesses[i] == answers[i])
+			result->strike++;
+		else if (guesses[i] == answers[j] || guesses[i] == answers[k])
+			result->ball++;
+		else
+			result->out++;
+	}
+}
+
+void PrintResult(Result* result)
+{
+	cout << "[결과] S:" << result->strike << " B:" << result->ball << " O:" << result->out << endl;
+}
+
+int main()
+{
+	// 0~9 사이의 중복되지 않는 난수 3가지를 골라서 정답을 생성
+	int answers[DIGIT];
+	GenerateAnswers(answers);
 
 	int tryCount = 0;
 
@@ -41,33 +71,16 @@ int main()
 		tryCount++;
 
 		// 사용자로부터 3개의 숫자(추측)를 입력 받음
-		cout << "추측을 입력하세요" << endl;
 		int guesses[DIGIT];
-
-		for (int i = 0; i < DIGIT; i++)
-			cin >> guesses[i];
-
-		PrintNumbers("[추측]", guesses);
+		InputGuesses(guesses);
 
 
 		// 정답과 추측을 비교하여 결과 판정
-		Result result {0,0,0};
-
-		for (int i = 0; i < DIGIT; i++)
-		{
-			int j = (i + 1) % DIGIT;
-			int k = (i + 2) % DIGIT;
-
-			if (guesses[i] == answers[i])
-				result.strike++;
-			else if (guesses[i] == answers[j] || guesses[i] == answers[k])
-				result.ball++;
-			else
-				result.out++;
-		}
+		Result result{ 0,0,0 };
+		CalculateResult(&result, answers, guesses);
 
 		// 결과를 화면에 출력
-		cout << "[결과] S:" << result.strike << " B:" << result.ball << " O:" << result.out << endl;
+		PrintResult(&result);
 
 		// 추측이 결과와 다르면 2번 단계로 돌아가서 반복
 		if (result.strike == DIGIT)
