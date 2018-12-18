@@ -1,20 +1,14 @@
 #pragma once
+#include "Unit.h"
 
-struct Marine
+struct Marine : public Unit
 {
-private:
-	int X;
-	int Y;
-	int HP;
-
 public:
 	Marine();
 
 	~Marine();
 
-	void Move(int x, int y);
-
-	void PrintLocation();
+	void PlaySound() override;
 };
 
 

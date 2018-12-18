@@ -3,28 +3,18 @@
 #include <iostream>
 using namespace std;
 
-Firebat* Firebat_Create()
+Firebat::Firebat()
 {
-	Firebat* firebat = (Firebat*)malloc(sizeof(Firebat));
-	firebat->X = 1;
-	firebat->Y = 1;
-	firebat->HP = 60;
-
-	return firebat;
+	X = 1;
+	Y = 1;
+	HP = 50;
 }
 
-void Firebat_Destroy(Firebat* firebat)
+Firebat::~Firebat()
 {
-	free(firebat);
 }
 
-void Firebat_Move(Firebat* firebat, int x, int y)
+void Firebat::PlaySound()
 {
-	firebat->X = x;
-	firebat->Y = y;
-}
-
-void Firebat_PrintLocation(Firebat* firebat)
-{
-	std::cout << "X:" << firebat->X << " Y:" << firebat->Y << endl;
+	cout << "Shi~~~~" << endl;
 }

@@ -1,16 +1,14 @@
 #pragma once
-struct Firebat
+#include "Unit.h"
+
+struct Firebat : public Unit
 {
-	int X;
-	int Y;
-	int HP;
+public:
+	Firebat();
+
+	~Firebat();
+
+	void PlaySound() override;
 };
 
-Firebat* Firebat_Create();
-
-void Firebat_Destroy(Firebat* marine);
-
-void Firebat_Move(Firebat* marine, int x, int y);
-
-void Firebat_PrintLocation(Firebat* marine);
 

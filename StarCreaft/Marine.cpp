@@ -14,13 +14,8 @@ Marine::~Marine()
 {
 }
 
-void Marine::Move(int x, int y)
+void Marine::PlaySound()
 {
-	X = x;
-	Y = y;
+	cout << "You wanna piece of me boy?" << endl;
 }
 
-void Marine::PrintLocation()
-{
-	std::cout << "X:" << X << " Y:" << Y << endl;
-}
