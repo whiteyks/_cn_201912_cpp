@@ -21,12 +21,27 @@
     <ClInclude Include="Result.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="header.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="cpp.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Result.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Answer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Guess.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Utiliity.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
