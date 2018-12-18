@@ -26,5 +26,8 @@
     <ClCompile Include="PointerPractice.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Result.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

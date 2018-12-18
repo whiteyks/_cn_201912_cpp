@@ -13,7 +13,7 @@ void PrintNumbers(const char* prefix, const int* numbers)
 	cout << endl;
 }
 
-int CountInArray(int* answers, int value)
+int CountInArray(const int* answers, int value)
 {
 	int count = 0;
 	for (int i = 0; i < DIGIT; i++)
@@ -23,7 +23,7 @@ int CountInArray(int* answers, int value)
 	return count;
 }
 
-bool HasDuplicateNumber(int* answers)
+bool HasDuplicateNumber(const int* answers)
 {
 	for (int i = 0; i < DIGIT; i++)
 	{
@@ -58,7 +58,7 @@ void InputGuesses(int guesses[])
 	PrintNumbers("[추측]", guesses);
 }
 
-void CalculateResult(Result* result, int answers[], int guesses[])
+void CalculateResult(Result* result, const int answers[], const int guesses[])
 {
 	for (int i = 0; i < DIGIT; i++)
 	{
@@ -74,7 +74,7 @@ void CalculateResult(Result* result, int answers[], int guesses[])
 	}
 }
 
-void PrintResult(Result* result)
+void PrintResult(const Result* result)
 {
 	cout << "[결과] S:" << result->strike << " B:" << result->ball << " O:" << result->out << endl;
 }

@@ -1,5 +1,7 @@
 ﻿#include "pch.h"
 #include <iostream>
+#include "..\cpp/Result.h"
+
 using namespace  std;
 
 // 지역변수 사용
