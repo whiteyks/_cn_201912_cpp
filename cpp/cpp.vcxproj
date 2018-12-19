@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Answer.h" />
+    <ClInclude Include="NumberContainer.h" />
     <ClInclude Include="Guess.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="pch.h" />
@@ -160,6 +161,7 @@
   <ItemGroup>
     <ClCompile Include="Answer.cpp" />
     <ClCompile Include="cpp.cpp" />
+    <ClCompile Include="NumberContainer.cpp" />
     <ClCompile Include="Guess.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

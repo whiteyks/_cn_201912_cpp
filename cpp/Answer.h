@@ -1,16 +1,14 @@
 #pragma once
 #include "header.h"
+#include "NumberContainer.h"
 
-class Answer
+class Answer : public NumberContainer
 {
 private:
-	int _numbers[DIGIT];
-
 	bool HasDuplicateNumber();
 	int CountInArray(int value);
-	void PrintNumbers(const char* prefix);
 
 public:
 	void Generate();
-	int At(int index) const;
+	
 };

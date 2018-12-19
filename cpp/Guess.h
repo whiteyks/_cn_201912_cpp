@@ -1,14 +1,11 @@
 #pragma once
 #include "header.h"
+#include "NumberContainer.h"
 
-class Guess
+class Guess : public NumberContainer
 {
 private:
-	int _numbers[DIGIT];
-	void PrintNumbers(const char* prefix);
 
 public:
 	void Input();
-
-	int At(int index) const;
 };

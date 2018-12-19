@@ -15,7 +15,7 @@ void Answer::Generate()
 			break;
 	}
 
-	PrintNumbers("[정답]");
+	Print("[정답]");
 }
 
 bool Answer::HasDuplicateNumber()
@@ -39,18 +39,7 @@ int Answer::CountInArray(int value)
 	return count;
 }
 
-void Answer::PrintNumbers(const char* prefix)
-{
-	cout << prefix;
-	for (int i = 0; i < DIGIT; i++)
-		cout << _numbers[i] << ' ';
-	cout << endl;
-}
 
-int Answer::At(int index) const 
-{
-	return _numbers[index];
-}
 
 
 
