@@ -1,16 +1,14 @@
 #pragma once
 #include "header.h"
 
-class Answer
+class Guess
 {
 private:
 	int _numbers[DIGIT];
-
-	bool HasDuplicateNumber();
-	int CountInArray(int value);
 	void PrintNumbers(const char* prefix);
 
 public:
-	void Generate();
+	void Input();
+
 	int At(int index);
 };

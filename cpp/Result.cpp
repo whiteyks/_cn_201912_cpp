@@ -1,24 +1,34 @@
 #include "pch.h"
 #include "header.h"
+#include "Guess.h"
+#include "Answer.h"
+#include "Result.h"
+#include <iostream>
+using namespace std;
 
-void CalculateResult(Result* result, const int answers[], const int guesses[])
+void Result::Calculate(const Answer* answer, const Guess* guess)
 {
 	for (int i = 0; i < DIGIT; i++)
 	{
 		int j = (i + 1) % DIGIT;
 		int k = (i + 2) % DIGIT;
 
-		if (guesses[i] == answers[i])
-			result->strike++;
-		else if (guesses[i] == answers[j] || guesses[i] == answers[k])
-			result->ball++;
+		if (guess->At(i) == answer->At(i))
+			_strike++;
+		else if (guess->At(i) == answer->At(j) || guess->At(i) == answer->At(k))
+			_ball++;
 		else
-			result->out++;
+			_out++;
 	}
 }
 
-void PrintResult(const Result* result)
+void Result::Print()
 {
-	std::cout << "[결과] S:" << result->strike << " B:" << result->ball << " O:" << result->out << std::endl;
+	std::cout << "[결과] S:" << _strike << " B:" << _ball << " O:" << _out << std::endl;
+}
+
+bool Result::IsCorrect()
+{
+	return _strike == DIGIT;
 }
 

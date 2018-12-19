@@ -2,6 +2,9 @@
 #include <iostream>
 #include "header.h"
 #include "Answer.h"
+#include "Guess.h"
+#include "Result.h"
+using namespace std;
 
 int main()
 {
@@ -16,19 +19,18 @@ int main()
 		tryCount++;
 
 		// 사용자로부터 3개의 숫자(추측)를 입력 받음
-		int guesses[DIGIT];
-		InputGuesses(guesses);
-
-
+		Guess guess;
+		guess.Input();
+		
 		// 정답과 추측을 비교하여 결과 판정
-		Result result{ 0,0,0 };
-		CalculateResult(&result, answers, guesses);
+		Result result;
+		result.Calculate(&answer, &guess);
 
 		// 결과를 화면에 출력
-		PrintResult(&result);
+		result.Print();
 
 		// 추측이 결과와 다르면 2번 단계로 돌아가서 반복
-		if (result.strike == DIGIT)
+		if (result.IsCorrect())
 			break;
 	}
 

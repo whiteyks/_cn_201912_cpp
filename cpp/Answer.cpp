@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "header.h"
 #include "Answer.h"
+#include <iostream>
+using namespace std;
 
 void Answer::Generate()
 {
@@ -44,5 +46,11 @@ void Answer::PrintNumbers(const char* prefix)
 		cout << _numbers[i] << ' ';
 	cout << endl;
 }
+
+int Answer::At(int index)
+{
+	return _numbers[index];
+}
+
 
 
