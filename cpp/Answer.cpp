@@ -47,7 +47,7 @@ void Answer::PrintNumbers(const char* prefix)
 	cout << endl;
 }
 
-int Answer::At(int index)
+int Answer::At(int index) const 
 {
 	return _numbers[index];
 }

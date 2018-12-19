@@ -6,6 +6,13 @@
 #include <iostream>
 using namespace std;
 
+Result::Result()
+{
+	_strike = 0;
+	_ball = 0;
+	_out = 0;
+}
+
 void Result::Calculate(const Answer* answer, const Guess* guess)
 {
 	for (int i = 0; i < DIGIT; i++)

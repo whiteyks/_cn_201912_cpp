@@ -12,5 +12,5 @@ private:
 
 public:
 	void Generate();
-	int At(int index);
+	int At(int index) const;
 };

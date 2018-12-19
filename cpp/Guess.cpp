@@ -14,7 +14,7 @@ void Guess::Input()
 	PrintNumbers("[ÃßÃø]");
 }
 
-int Guess::At(int index)
+int Guess::At(int index) const
 {
 	return _numbers[index];
 }
