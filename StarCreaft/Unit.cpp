@@ -2,22 +2,15 @@
 #include "Unit.h"
 #include <iostream>
 
-Unit::Unit()
+void Unit::GetDamaged(int damage)
 {
+	while (damage-- > 0)
+	{
+		HP--;
+	}
 }
 
-
-Unit::~Unit()
+void Unit::PrintStatus()
 {
-}
-
-void Unit::Move(int x, int y)
-{
-	X = x;
-	Y = y;
-}
-
-void Unit::PrintLocation()
-{
-	std::cout << "X:" << X << " Y:" << Y << std::endl;
+	std::cout << "I am marine and my hp is " << HP << std::endl;
 }

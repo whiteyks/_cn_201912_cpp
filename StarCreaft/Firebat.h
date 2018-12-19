@@ -5,10 +5,6 @@ struct Firebat : public Unit
 {
 public:
 	Firebat();
-
-	~Firebat();
-
-	void PlaySound() override;
 };
 
 

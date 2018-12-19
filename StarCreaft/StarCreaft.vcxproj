@@ -154,8 +154,9 @@
     <ClInclude Include="Firebat.h" />
     <ClInclude Include="Marine.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Tank.h" />
+    <ClInclude Include="ProtossUnit.h" />
     <ClInclude Include="Unit.h" />
+    <ClInclude Include="Zealot.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Firebat.cpp" />
@@ -166,9 +167,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="ProtossUnit.cpp" />
     <ClCompile Include="StarCreaft.cpp" />
-    <ClCompile Include="Tank.cpp" />
     <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="Zealot.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

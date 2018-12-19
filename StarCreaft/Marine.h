@@ -5,10 +5,6 @@ struct Marine : public Unit
 {
 public:
 	Marine();
-
-	~Marine();
-
-	void PlaySound() override;
 };
 
 
