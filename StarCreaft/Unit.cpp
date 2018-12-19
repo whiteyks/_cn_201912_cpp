@@ -24,6 +24,12 @@ int Unit::GetHP()
 	return HP;
 }
 
+void Unit::MoveTo(int x, int y)
+{
+	X = x;
+	Y = y;
+}
+
 void Unit::PrintHP()
 {
 	cout << "my hp is " << HP;

@@ -3,23 +3,22 @@
 #include "Marine.h"
 #include "Firebat.h"
 #include "Zealot.h"
+#include "Wraith.h"
+#include "CommandCenter.h"
+#include "Flyable.h"
 
-void GetAttackedRandomly(Unit* m)
+void FlyToTheMoon(Flyable* flyable)
 {
-	int damage = rand() % 10 + 1;
-	m->GetDamaged(damage);
-	m->PrintStatus();
+		flyable->Fly(200,200);
 }
 
 int main()
 {
-	Unit* m = new Marine();
-	GetAttackedRandomly(m);
-	
-	GetAttackedRandomly(new Firebat());
-	
-	GetAttackedRandomly(new Zealot());
+	Wraith* w = new Wraith();
+	FlyToTheMoon(w);
 
+	CommandCenter* center = new CommandCenter();
+	FlyToTheMoon(center);
 }
 
 

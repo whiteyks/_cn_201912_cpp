@@ -151,15 +151,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CommandCenter.h" />
     <ClInclude Include="Firebat.h" />
+    <ClInclude Include="Flyable.h" />
     <ClInclude Include="Marine.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ProtossUnit.h" />
     <ClInclude Include="Unit.h" />
+    <ClInclude Include="Wraith.h" />
     <ClInclude Include="Zealot.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CommandCenter.cpp" />
     <ClCompile Include="Firebat.cpp" />
+    <ClCompile Include="Flyable.cpp" />
     <ClCompile Include="Marine.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -170,6 +175,7 @@
     <ClCompile Include="ProtossUnit.cpp" />
     <ClCompile Include="StarCreaft.cpp" />
     <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="Wraith.cpp" />
     <ClCompile Include="Zealot.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -33,6 +33,15 @@
     <ClInclude Include="ProtossUnit.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Wraith.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandCenter.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Flyable.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -54,6 +63,15 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="ProtossUnit.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Wraith.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandCenter.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Flyable.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
