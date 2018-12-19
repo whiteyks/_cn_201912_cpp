@@ -3,6 +3,11 @@
 #include <iostream>
 using namespace std;
 
+void Firebat::PrintName()
+{
+	cout << "Me, Firebat" << endl;
+}
+
 Firebat::Firebat()
 {
 	HP = 50;

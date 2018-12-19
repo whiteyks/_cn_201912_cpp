@@ -3,6 +3,9 @@
 
 struct Firebat : public Unit
 {
+protected:
+	void PrintName() override;
+
 public:
 	Firebat();
 };

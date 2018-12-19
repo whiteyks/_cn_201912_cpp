@@ -4,8 +4,13 @@ class Unit
 protected:
 	int HP;
 
+	// abstract void PrintName();
+	virtual void PrintName() = 0;
+	virtual void PrintHP();
+
 public:
-	void GetDamaged(int damage);
+	virtual void GetDamaged(int damage);
 	void PrintStatus();
+	int GetHP();
 };
 

@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Unit.h"
 #include <iostream>
+using namespace std;
 
 void Unit::GetDamaged(int damage)
 {
@@ -12,5 +13,18 @@ void Unit::GetDamaged(int damage)
 
 void Unit::PrintStatus()
 {
-	std::cout << "I am marine and my hp is " << HP << std::endl;
+	PrintName();
+	cout << " and ";
+	PrintHP();
+	cout << endl;
+}
+
+int Unit::GetHP()
+{
+	return HP;
+}
+
+void Unit::PrintHP()
+{
+	cout << "my hp is " << HP;
 }
