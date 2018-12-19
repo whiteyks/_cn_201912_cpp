@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Answer.h" />
     <ClInclude Include="header.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Result.h" />

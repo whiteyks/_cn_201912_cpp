@@ -1,13 +1,14 @@
 ﻿#include "pch.h"
 #include <iostream>
 #include "header.h"
+#include "Answer.h"
 
 int main()
 {
 	// 0~9 사이의 중복되지 않는 난수 3가지를 골라서 정답을 생성
-	int answers[DIGIT];
-	GenerateAnswers(answers);
-
+	Answer answer;
+	answer.Generate();
+	
 	int tryCount = 0;
 
 	while (true)
